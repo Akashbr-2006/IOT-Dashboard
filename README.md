@@ -25,7 +25,8 @@ Hardware: Arduino (C++) / LPC1768 logic for physical device and relay control.
 ☁️ Backend Visualization
 The system uses a hierarchical JSON structure to manage device states in the cloud. Each entry tracks the device role, signal type, and live value.
 
-![Firebase Data Structure](screenshots/firebase_structure.png)
+![Firebase Data Structure](screenshots/firebase_structure.jpeg
+)
 
 Example Path: /devices/{deviceID}/value.
 

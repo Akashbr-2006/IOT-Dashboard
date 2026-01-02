@@ -1,39 +1,21 @@
 import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
+import java.util.Properties;
 
 public class FirebaseHandler {
+    private static String DATABASE_URL;
 
-    // ✅ FIXED: Using your live URL
-    private static final String DATABASE_URL = "https://student-iot-e10f9-default-rtdb.asia-southeast1.firebasedatabase.app/";
-
-    // --- NEW METHOD: Get a single value (for Lidar polling) ---
-    public static int getDeviceValue(String deviceId) {
-        try {
-            // Construct URL: .../devices/DEVICE_ID/value.json
-            String path = "devices/" + deviceId + "/value.json";
-            URL url = new URL(DATABASE_URL + path);
-            
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            conn.setConnectTimeout(2000); // Fast timeout
-            conn.setReadTimeout(2000);
-
-            if (conn.getResponseCode() == 200) {
-                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                String response = br.readLine();
-                br.close();
-                // Response will be a simple number like "45" or "null"
-                if (response != null && !response.equals("null")) {
-                    return Integer.parseInt(response);
-                }
-            }
-        } catch (Exception e) {
-            // Fail silently during polling to avoid console spam
+    static {
+        try (InputStream input = new FileInputStream("config.properties")) {
+            Properties prop = new Properties();
+            prop.load(input);
+            DATABASE_URL = prop.getProperty("firebase.url");
+        } catch (IOException ex) {
+            System.err.println("Error: config.properties not found! Please create it.");
+            DATABASE_URL = ""; 
         }
-        return -1; // Return -1 if failed
     }
-
     public static void saveDevice(Device d) {
         new Thread(() -> {
             try {

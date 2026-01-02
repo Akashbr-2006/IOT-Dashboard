@@ -14,13 +14,9 @@ public class StyleUtils {
     public static final Font NORMAL_FONT = new Font("Segoe UI", Font.PLAIN, 14);
 
     public static ImageIcon loadIcon(String iconName) {
-        // ✅ FIXED: Using getResource to support JAR files
-        // Note: Make sure your 'icons' folder is inside your 'src' folder
         try {
             URL imgUrl = StyleUtils.class.getResource("/icons/" + iconName);
             if (imgUrl == null) {
-                // Fallback or silently fail (optional: print error)
-                // System.err.println("Icon not found: " + iconName);
                 return null;
             }
             ImageIcon icon = new ImageIcon(imgUrl);

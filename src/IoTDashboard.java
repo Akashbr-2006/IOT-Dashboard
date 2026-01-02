@@ -101,11 +101,8 @@ public class IoTDashboard {
                 }
 
                 if (updated) {
-                    // 1. Run Automation Rules
-                    // Ensure AutomationPage.java has getRules() method
                     AutomationEngine.checkRules(AutomationPage.getRules());
 
-                    // 2. Refresh UI
                     SwingUtilities.invokeLater(() -> {
                         refreshHomeCards();
                         if (controlPageRef != null && controlPageRef.getCurrentDevice() != null) {
@@ -114,7 +111,7 @@ public class IoTDashboard {
                     });
                 }
             }
-        }, 2000, 2000); // Check every 2 seconds
+        }, 2000, 2000);
     }
 
     public static void navigateTo(String pageName) {
@@ -382,7 +379,7 @@ public class IoTDashboard {
 
     private static JPanel createPlaceholder(String title) {
         JPanel panel = new JPanel(new GridBagLayout());
-        panel.setBackground(StyleUtils.CONTENT_BG); // Ensure StyleUtils.java is compiled
+        panel.setBackground(StyleUtils.CONTENT_BG);
         JLabel label = new JLabel(title + " Screen (Under Construction)");
         label.setFont(new Font("Arial", Font.ITALIC, 20));
         label.setForeground(Color.GRAY);

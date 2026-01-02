@@ -40,7 +40,7 @@ public class DeviceManager {
                  
                  Device d = new Device(id, name, cat, type);
                  d.setValue(val);
-                 d.setPinned(pinned); // Apply pinned status
+                 d.setPinned(pinned); 
                  devices.add(d);
             }
             return true; 

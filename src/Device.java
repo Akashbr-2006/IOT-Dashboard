@@ -4,7 +4,7 @@ public class Device {
     private String category; 
     private String type;     
     private int value;       
-    private boolean isPinned = false; // Added to track dashboard status
+    private boolean isPinned = false; 
 
     public Device(String id, String name, String category, String type) {
         this.id = id;
@@ -19,10 +19,10 @@ public class Device {
     public String getCategory() { return category; }
     public String getType() { return type; }
     public int getValue() { return value; }
-    public boolean isPinned() { return isPinned; } // Added
+    public boolean isPinned() { return isPinned; } 
 
     public void setName(String name) { this.name = name; }
     public void setValue(int value) { this.value = value; }
     public void setType(String type) { this.type = type; }
-    public void setPinned(boolean pinned) { this.isPinned = pinned; } // Added
+    public void setPinned(boolean pinned) { this.isPinned = pinned; }
 }

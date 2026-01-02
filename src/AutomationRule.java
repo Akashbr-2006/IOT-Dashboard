@@ -6,7 +6,7 @@ public class AutomationRule {
     private String targetId;    
     private int actionValue;    
     
-    // Time/Loop settings (for future use)
+    
     private int delaySeconds;   
     private boolean isRepeat;  
     private int repeatSeconds;  

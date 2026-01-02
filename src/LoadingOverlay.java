@@ -17,7 +17,7 @@ public class LoadingOverlay extends JPanel {
         JPanel centerBox = new ModernShadowPanel(); 
         centerBox.setLayout(new BoxLayout(centerBox, BoxLayout.Y_AXIS));
         centerBox.setBackground(Color.WHITE);
-        centerBox.setPreferredSize(new Dimension(400, 280)); // Made slightly taller for buttons
+        centerBox.setPreferredSize(new Dimension(400, 280)); 
         centerBox.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
 
         

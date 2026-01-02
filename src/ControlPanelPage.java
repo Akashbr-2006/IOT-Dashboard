@@ -49,12 +49,9 @@ public class ControlPanelPage {
 
     public JPanel getPanel() { return mainPanel; }
     
-    // ✅ NEW: Getter for IoTDashboard
     public Device getCurrentDevice() {
         return currentDevice;
     }
-
-    // ✅ NEW: Refresh method for live updates
     public void refreshState() {
         if (currentDevice != null) {
             loadDevice(currentDevice);

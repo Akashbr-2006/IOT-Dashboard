@@ -1,1 +1,1 @@
-firebase.url=https://student-iot-e10f9-default-rtdb.asia-southeast1.firebasedatabase.app/
+firebase.url=https://YOUR_DATABASE_LINK.firebasedatabase.app/

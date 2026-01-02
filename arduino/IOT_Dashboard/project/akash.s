@@ -1,0 +1,11 @@
+	AREA onetozero,CODE,READONLY
+	ENTRY
+	EXPORT main
+main
+	MOV r0,#123
+	ADD r1,r0,#5
+STOP
+	NOP
+	NOP
+	NOP
+	END
